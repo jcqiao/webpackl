@@ -1,5 +1,6 @@
 import { hello } from "./src/helloworld";
 const title = "hello";
+console.log(12222);
 function render() {
   document.body.innerText = hello();
 }
