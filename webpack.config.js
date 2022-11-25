@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
+debugger;
 module.exports = {
   entry: "./main.js",
   output: {
@@ -8,8 +10,18 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    // static: path.resolve(__dirname, "./src"),
   },
-  plugins: [new HtmlWebpackPlugin()],
+  devtool: "source-map",
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new SourceMapDevToolPlugin({
+      filename: "sourcemaps/[file].map",
+    }),
+  ],
   mode: "development",
   optimization: {
     splitChunks: {
