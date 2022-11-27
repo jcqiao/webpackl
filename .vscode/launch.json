@@ -1,0 +1,18 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "runtimeExecutable": "yarn", // 不多说
+      "runtimeArgs": ["debug"], // 执行的脚本指令，即之前在package.json文件里写的scripts,如果是npm，别忘了改成["run", "debug"]
+      "port": 8080 // node 监听的端口
+    }
+  ]
+}

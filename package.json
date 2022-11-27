@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --open",
-    "debug": "node $NODE_DEBUG_OPTION /Users/chunqiaojiang/workspaces/myWorkspaces/webpackl/node_modules/webpack-dev-server/bin/webpack-dev-server.js --open"
+    "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js"
   },
   "keywords": [],
   "author": "",
