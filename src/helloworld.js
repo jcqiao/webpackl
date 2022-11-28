@@ -1,6 +1,7 @@
 export function hello() {
   return "hello world";
 }
+// 这里主要是为了增大体积 达到分包的效果
 console.log("hell2");
 console.log("hell");
 console.log("hell");
