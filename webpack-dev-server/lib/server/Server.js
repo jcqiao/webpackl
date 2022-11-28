@@ -59,7 +59,7 @@ class Server {
         try {
           // 返回文件描述对象
           let staticObj = this.fs.statSync(filePath);
-          console.log(staticObj, "staticObj");
+          // console.log(staticObj, "staticObj");
           if (staticObj.isFile()) {
             const content = this.fs.readFileSync(filePath);
             console.log("content", content);
