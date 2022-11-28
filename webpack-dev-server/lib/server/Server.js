@@ -1,7 +1,11 @@
 const express = require("express");
 const http = require("http");
-const memoryFS = require("memory-fs");
 const path = require("path");
+// const memoryFS = require("memory-fs");
+// 为了更加直观 将memoryFs 变为硬盘fs 这样就能在dist目录下观察到了
+const fs = require("fs-extra");
+fs.join = path.join;
+
 const mime = require("mime");
 const updateCompiler = require("../../utils/updateCompiler");
 const socketIO = require("socket.io");
@@ -42,7 +46,7 @@ class Server {
     this.compiler.watch({}, () => {
       console.log("中间件以监听模式启动编译");
     });
-    const fs = new memoryFS();
+    // const fs = new memoryFS();
     // 打包后的文件写入memory fs
     this.fs = this.compiler.outputFileSystem = fs;
     // 返回一个中间件 用来响应客户端对文件的请求 如main.js index.html
